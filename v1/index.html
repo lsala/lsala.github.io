@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lorenzo Sala - Research Scientist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* General body styling */
+    body {
+      font-family: Calibri, sans-serif;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header/logo Title */
+    .header {
+      padding: 60px;
+      text-align: center;
+      background-color: #ffffff;
+      background-image: url('figures/mountain.jpg');
+      background-size: cover;
+      color: black;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      color: #fff;
+    }
+
+    /* Navigation bar */
+    .navbar {
+      overflow: hidden;
+      background-color: #7EA4FC;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    .navbar a.right {
+      float: right;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Layout: Two-column structure */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* Sidebar (left) */
+    .side {
+      flex: 25%;
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .side img {
+      width: 90%;
+      border-radius: 50%;
+    }
+
+    /* Main content (right) */
+    .main {
+      flex: 75%;
+      background-color: white;
+      padding: 20px;
+    }
+
+    .main h2 {
+      color: #333;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 30px;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+
+    /* Responsive layout for small screens */
+    @media screen and (max-width: 700px) {
+      .row {
+        flex-direction: column;
+      }
+
+      .navbar a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<div class="header">
+  <h1>Lorenzo Sala</h1>
+  <p>Junior Research Scientist at INRAE</p>
+</div>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+  <a href="./index.html">Home</a>
+  <a href="./research.html">Research</a>
+  <a href="./publication.html">Publications</a>
+</div>
+
+<!-- Main Content Section -->
+<div class="row">
+  <!-- Sidebar -->
+  <div class="side">
+    <h1>Lorenzo Sala</h1>
+    <img src="./figures/profile_pic.jpg" alt="Profile Picture">
+    <p>lorenzo.sala[at]inrae.fr</p>
+    <p>Office 124, Batiment 210 <br> INRAE Jouy-en-Josas</p>
+    <p>Domaine de Vilvert <br> 78352 Jouy-en-Josas <br> FRANCE</p>
+    <p><img src="https://www.inrae.fr/themes/custom/inrae_socle/logo.svg" style="height: 100px;"></p>
+  </div>
+
+  <!-- Main Column -->
+  <div class="main">
+    <p>Download <a href="./sala_cv.pdf" download>Curriculum Vitae</a></p>
+
+    <h2>About Me</h2>
+    <p>
+      I graduated from <a href="http://www.polimi.it/en">Politecnico of Milan</a> (Italy) with a BSc in Mathematical Engineering in 2013 and an MSc in Computational Science and Engineering in 2016. <br>
+      In September 2019, I obtained a PhD in applied mathematics at the University of Strasbourg (<a href="http://www-irma.u-strasbg.fr/">IRMA</a>) in France. <br>
+      After my PhD, I worked as a Research Associate at the <a href="https://www.imperial.ac.uk/mathematics/">Department of Mathematics</a> at Imperial College London (UK) for one year, 
+      and as a postdoctoral researcher in the <a href="https://team.inria.fr/simbiotx/">SIMBIOTX</a> team at the <a href="https://www.inria.fr/fr/centre-inria-de-saclay">Inria Research Center</a> in Saclay (France) for two years. <br>
+      Currently, I hold a position as Junior Research Scientist (CRCN) at <a href="https://www.inrae.fr/">INRAE</a> in Jouy-en-Josas (France).
+    </p>
+
+    <h2>Employment</h2>
+    <ul>
+      <li><b>2023 - Present:</b> Junior Research Scientist (CRCN) at <a href="https://www.inrae.fr/">INRAE</a>.<br><i>Research Unit:</i> <a href="https://maiage.inrae.fr/fr">MaIAGE</a><br><i>Research Team:</i> Dynenvie</li>
+      <li><b>2020 - 2022:</b> Post-doc at <a href="https://www.inria.fr/fr/centre-inria-de-saclay">INRIA Saclay</a><br><i>Project:</i> Modelling liver hemodynamics for targeted surgical interventions.</li>
+      <li><b>2020 - 2021:</b> Consultant for Gspace LLC (Computational modeling for smart solutions in life sciences and engineering).</li>
+      <li><b>2019 - 2020:</b> Research Associate at <a href="https://www.imperial.ac.uk/mathematics/">Imperial College London</a><br><i>Project:</i> Mathematical modelling of sperm-mucus interactions.</li>
+    </ul>
+
+    <h2>Qualifications</h2>
+    <ul>
+      <li><b>2020:</b> Qualified for "Maître de conférences" (French lecturer position). </li>
+      <li><b>2016 - 2019:</b> PhD in Applied Mathematics, University of Strasbourg <br><i>Thesis:</i> Mathematical modeling of ocular blood flow and its interactions.</li>
+      <li><b>2013 - 2016:</b> MSc in Mathematical Engineering, Politecnico di Milano <br><i>Thesis:</i> A Cellular Scale Model of Aqueous Humour Production.</li>
+    </ul>
+
+    <h2>Teaching</h2>
+    <ul>
+      <li><b>Mathématiques I</b> (Undergraduate): Review of mathematics for 1st-year Biology students, Université de Strasbourg, 2017-2019.</li>
+      <li><b>Algorithme et Programmation en C++</b> (Undergraduate): C++ algorithms and coding lessons for 3rd-year Mathematics students, Université de Strasbourg, 2018-2019.</li>
+      <li><b>Student Supervision:</b> Supervised students on projects related to vascular transport, liver hemodynamics, ocular blood flow modeling, and more.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Footer Section -->
+<div class="footer">
+  <p>© 2024 Lorenzo Sala. All rights reserved.</p>
+</div>
+
+</body>
+</html>

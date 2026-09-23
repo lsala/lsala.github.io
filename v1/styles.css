@@ -1,0 +1,362 @@
+/* ============================================
+   Global Styles & Reset
+   ============================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Calibri, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   Header Section
+   ============================================ */
+.header {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  background-image: url('figures/mountain.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+
+.header h1 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header p {
+  font-size: 18px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   Navigation Bar
+   ============================================ */
+.navbar {
+  overflow: hidden;
+  background-color: #7EA4FC;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #5a84dc;
+  color: white;
+}
+
+.navbar a.active {
+  background-color: #5a84dc;
+}
+
+.navbar a.right {
+  float: right;
+}
+
+/* ============================================
+   Main Layout - Two Column
+   ============================================ */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: calc(100vh - 300px);
+}
+
+/* Sidebar (Left Column) */
+.side {
+  flex: 25%;
+  background-color: #f8f9fa;
+  padding: 30px 20px;
+  text-align: center;
+  border-right: 1px solid #e0e0e0;
+}
+
+.side h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.side img {
+  width: 90%;
+  max-width: 250px;
+  border-radius: 50%;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.side p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.side .logo-container {
+  margin-top: 30px;
+}
+
+.side .logo-container img {
+  border-radius: 0;
+  width: auto;
+  max-height: 80px;
+}
+
+/* Main Content (Right Column) */
+.main {
+  flex: 75%;
+  background-color: white;
+  padding: 40px;
+}
+
+.main h2 {
+  color: #333;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #7EA4FC;
+  font-size: 26px;
+}
+
+.main h2:first-child {
+  margin-top: 0;
+}
+
+.main p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.main ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.main li {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.main li b {
+  color: #333;
+}
+
+/* ============================================
+   Single Column Layout (for pages without sidebar)
+   ============================================ */
+.main-full {
+  flex: 100%;
+  background-color: white;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Footer Section
+   ============================================ */
+.footer {
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto;
+}
+
+.footer p {
+  color: #666;
+  font-size: 14px;
+}
+
+/* ============================================
+   Content Components
+   ============================================ */
+.cv-download {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #7EA4FC;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.cv-download:hover {
+  background-color: #5a84dc;
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+.content img {
+  margin-right: 20px;
+  display: block;
+}
+
+/* Publication iframe container */
+.publication-frame {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.publication-frame iframe {
+  width: 100%;
+  min-height: 500px;
+  border: none;
+}
+
+/* Video embeds */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 560px;
+  margin: 20px 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ============================================
+   Responsive Layout
+   ============================================ */
+@media screen and (max-width: 900px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .side {
+    flex: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .main {
+    flex: 100%;
+    padding: 30px 20px;
+  }
+
+  .navbar a {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header h1 {
+    font-size: 28px;
+  }
+
+  .header p {
+    font-size: 16px;
+  }
+
+  .navbar a {
+    float: none;
+    width: 100%;
+    text-align: left;
+  }
+
+  .main h2 {
+    font-size: 22px;
+  }
+
+  .main {
+    padding: 20px 15px;
+  }
+
+  .side {
+    padding: 20px 15px;
+  }
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.section-divider {
+  margin: 40px 0;
+  border: 0;
+  border-top: 1px solid #e0e0e0;
+}

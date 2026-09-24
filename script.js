@@ -37,6 +37,59 @@ if (eye2heartFigure) {
   eye2heartFigure.append(image, caption);
 }
 
+// Keep professional profiles available without adding more homepage content.
+const footerInner = document.querySelector('.footer-inner');
+if (footerInner) {
+  const existingOrcid = [...footerInner.querySelectorAll('a')].find((item) => item.href.includes('orcid.org'));
+  if (existingOrcid?.parentElement?.children.length === 1) existingOrcid.parentElement.remove();
+  const profiles = document.createElement('nav');
+  profiles.className = 'footer-profiles';
+  profiles.setAttribute('aria-label', 'Professional profiles');
+  [
+    ['LinkedIn', 'https://www.linkedin.com/in/lorenzo-sala-627703130/'],
+    ['Google Scholar', 'https://scholar.google.it/citations?user=z4ofUZQAAAAJ&hl=en'],
+    ['ORCID', 'https://orcid.org/0000-0002-8878-0616']
+  ].forEach(([label, href]) => {
+    const profile = document.createElement('a');
+    profile.href = href;
+    profile.textContent = label;
+    profile.target = '_blank';
+    profile.rel = 'me noopener';
+    profiles.append(profile);
+  });
+  footerInner.append(profiles);
+}
+
+// A restrained, swipeable gallery for talks, workshops and scientific exchange.
+const researchMain = document.querySelector('main #data-informed');
+if (researchMain) {
+  const gallery = document.createElement('section');
+  gallery.className = 'section research-gallery';
+  gallery.innerHTML = `
+    <div class="container">
+      <div class="gallery-head">
+        <div><p class="eyebrow">Beyond the models</p><h2>Research in practice</h2></div>
+        <div class="gallery-controls">
+          <button type="button" class="gallery-button gallery-prev" aria-label="Previous photographs">←</button>
+          <button type="button" class="gallery-button gallery-next" aria-label="Next photographs">→</button>
+        </div>
+      </div>
+      <div class="gallery-track" tabindex="0" aria-label="Photographs from talks and scientific events">
+        <figure class="gallery-slide portrait"><img src="photos/research-06.jpg" alt="Lorenzo Sala presenting mathematical research" loading="lazy"></figure>
+        <figure class="gallery-slide"><img src="photos/research-02.jpg" alt="Lorenzo Sala giving a presentation on physics-informed neural networks" loading="lazy"></figure>
+        <figure class="gallery-slide"><img src="photos/research-03.jpg" alt="Lorenzo Sala taking part in a scientific panel discussion" loading="lazy"></figure>
+        <figure class="gallery-slide portrait"><img src="photos/research-04.jpg" alt="Lorenzo Sala explaining a physics-informed model during a talk" loading="lazy"></figure>
+        <figure class="gallery-slide portrait"><img src="photos/research-05.jpg" alt="Lorenzo Sala presenting research on microbial communities" loading="lazy"></figure>
+        <figure class="gallery-slide portrait"><img src="photos/research-01.jpg" alt="Lorenzo Sala attending a scientific meeting" loading="lazy"></figure>
+      </div>
+    </div>`;
+  researchMain.insertAdjacentElement('afterend', gallery);
+  const track = gallery.querySelector('.gallery-track');
+  const move = (direction) => track.scrollBy({ left: direction * Math.max(280, track.clientWidth * .72), behavior: 'smooth' });
+  gallery.querySelector('.gallery-prev').addEventListener('click', () => move(-1));
+  gallery.querySelector('.gallery-next').addEventListener('click', () => move(1));
+}
+
 const publicationList = document.querySelector('#hal-publications');
 const halStatus = document.querySelector('#hal-status');
 if (publicationList && halStatus) {
